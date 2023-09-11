@@ -10,13 +10,15 @@ def get_number(value):
 
 def get_operation():
     newValue = ''
-    allowedChars = ['/', '*', '+', '-']
+    allowedChars = ['/', '*', '+', '-', '**', '//']
     while newValue not in allowedChars:
         newValue = input("""Выберите операцию: 
     - = вычитание
     + = сложение
     / = деление
     * = умножение
+    ** = возведение в степень
+    // = извлечение корня
     """)
     return newValue
 
@@ -32,6 +34,12 @@ def calculate(firstNumber, operation, secondNumber):
         print(firstNumber/secondNumber)
     elif operation == '*':
         print(firstNumber*secondNumber)
+    elif operation == '**':
+        print(firstNumber**secondNumber)
+    elif operation == '//':
+        print(firstNumber**(1/secondNumber))
+    else:
+        print('Неизвестная ошибка')
 
 inProcess = True
 while inProcess:
