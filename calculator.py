@@ -21,6 +21,9 @@ def get_operation():
     return newValue
 
 def calculate(firstNumber, operation, secondNumber):
+    if operation == '/' and secondNumber == 0:
+        print('Нельзя делить на ноль!')
+        return
     if operation == '+':
         print(firstNumber+secondNumber)
     elif operation == '-':
@@ -38,5 +41,16 @@ while inProcess:
     
     calculate(firstNumber, operation, secondNumber)
     print('\n\n\n')
+    isStop = input('Вы хотите продолжить? \nДа - продолжить \nНет - закончить\n')
+    if isStop == 'Да' or isStop == 'да':
+        pass
+    elif isStop == 'Нет' or isStop == 'нет':
+        print('Спасибо за использование программы!')
+        inProcess = False
+        break
+    else:
+        print('Вы ввели что то другое, программа завершится')
+        inProcess = False
+        break
 
 input()
